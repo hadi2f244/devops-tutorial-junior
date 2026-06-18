@@ -52,16 +52,8 @@ The student must create a baseline report that includes the kernel version, load
 - Official: https://www.freedesktop.org/software/systemd/man/latest/systemctl.html
 - Official: https://www.freedesktop.org/software/systemd/man/latest/journalctl.html
 - Official: https://www.gnu.org/software/coreutils/manual/coreutils.html
-- Blog: https://www.digitalocean.com/community/tags/linux
-- Blog: https://www.redhat.com/en/blog/channel/infrastructure
 - LPIC-like: https://www.lpi.org/our-certifications/lpic-1-overview/
 - LPIC-like: https://learning.lpi.org/en/learning-materials/101-500/
-
-## Assignment and Rubric
-
-- Assignment: system-report.sh script for a system snapshot
-- Artifact: homework/session-01/system-report.sh + README + sample-output.txt
-- Rubric: 30% conceptual, 30% output analysis, 25% lab, 15% assignment
 
 ## Suggested Supplementary Content
 
@@ -69,6 +61,7 @@ The student must create a baseline report that includes the kernel version, load
 - Introduce a quicarticulate the sequence of events in the Linux boot process, from power-on to a usable user-space.
 - The student can differentiate between a process and a thread, and describe their lifecycle.
 - The student can use `systemctl` to inspect and manage systemd targets and services.
+- ##TODO##: systemd service file structure and related files
 - The student can analyze CPU and memory usage using `top`, `free`, and `vmstat` to identify potential performance bottlenecks.
 - The student can interpret file permissions (read, write, execute) and change ownership using `chmod` and `chown`.
 - The student can create a script to automate the collection of system baseline metric
