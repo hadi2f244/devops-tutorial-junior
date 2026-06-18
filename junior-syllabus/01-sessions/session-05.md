@@ -3,23 +3,23 @@
 ## Topic
 Networking for DevOps: L4/L7, DNS, Firewall, SSH Hardening
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 - ../00-governance/course-metadata.md
 - ../00-governance/editorial-standard.md
 - ../00-governance/session-template.md
 
-## خلاصه جلسه
+## Session Summary
 
-این جلسه شبکه را از دید DevOps بررسی می‌کند: تشخیص لایه مشکل، تحلیل DNS، بررسی socket state و اعمال firewall و SSH hardening. هدف این است که دانشجو بتواند outageهای ساده شبکه را با ابزارهای استاندارد Linux ریشه‌یابی کند.
+This session examines networking from a DevOps perspective: identifying the problem layer, analyzing DNS, checking socket state, and applying firewall and SSH hardening. The goal is for the student to be able to root-cause simple network outages with standard Linux tools.
 
-## موضوعات فنی که باید پوشش داده شود
+## Technical Topics to be Covered
 
-- تفاوت L4 و L7 load balancing
-- مسیر DNS resolution و service discovery
-- تشخیص socket و route state
-- firewall policy و SSH hardening
+- Difference between L4 and L7 load balancing
+- DNS resolution path and service discovery
+- Identifying socket and route state
+- Firewall policy and SSH hardening
 
-## دستورات کلیدی
+## Key Commands
 
 - ip addr, ip route, ss -tulpen, ping, traceroute
 - dig, nslookup, host, curl -v, nc -zv
@@ -27,16 +27,16 @@ Networking for DevOps: L4/L7, DNS, Firewall, SSH Hardening
 - ufw status/allow/deny, iptables -S/-L, nft list ruleset
 - tcpdump -i
 
-## سناریوی عملی
+## Practical Scenario
 
-دو microservice با DNS-based discovery به هم وصل می‌شوند، سپس policy firewall حداقلی اعمال می‌شود و SSH فقط با key-based auth و source محدود فعال می‌ماند.
+Two microservices are connected via DNS-based discovery, then a minimal firewall policy is applied, and SSH is kept active only with key-based authentication and a limited source.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
 - 109.x: networking fundamentals
 - 110.x: security
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://man7.org/linux/man-pages/man8/ip.8.html
 - Official: https://man7.org/linux/man-pages/man8/ss.8.html
@@ -50,44 +50,44 @@ Networking for DevOps: L4/L7, DNS, Firewall, SSH Hardening
 
 - Assignment: network troubleshooting runbook
 - Artifact: homework/session-05/network-runbook.md + commands.log
-- Rubric: 35% network accuracy، 30% security controls، 20% troubleshooting path، 15% clarity
+- Rubric: 35% network accuracy, 30% security controls, 20% troubleshooting path, 15% clarity
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- معرفی TCP handshake و اثر آن روی timeout analysis
-- تمرین packet capture کوتاه با tcpdump و تفسیر اولیه
+- Introduce the TCP handshake and its effect on timeout analysis
+- Practice short packet captures with tcpdump and initial interpretation
 - Out-of-scope (Junior): advanced routing/BGP
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو مسیر عیب یابی شبکه را از L3 تا L7 مرحله بندی کند.
-- بتواند مشکلات DNS، route و firewall را تفکیک کند.
-- hardening پایه SSH را برای محیط dev/prod اعمال کند.
+- The student can stage the network troubleshooting path from L3 to L7.
+- Be able to isolate DNS, route, and firewall problems.
+- Apply basic SSH hardening for dev/prod environments.
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:25: L4/L7 و service path
-- 00:25 تا 01:05: DNS resolution و service discovery
-- 01:05 تا 01:20: ابزار socket/network inspection
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:10: firewall baseline (ufw/iptables/nft)
-- 02:10 تا 02:40: SSH hardening
-- 02:40 تا 03:00: lab outage simulation
+- 00:00 to 00:25: L4/L7 and service path
+- 00:25 to 01:05: DNS resolution and service discovery
+- 01:05 to 01:20: Socket/network inspection tools
+- 01:20 to 01:30: Break
+- 01:30 to 02:10: Firewall baseline (ufw/iptables/nft)
+- 02:10 to 02:40: SSH hardening
+- 02:40 to 03:00: Lab outage simulation
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. درخواست failed را با curl بازتولید کنید.
-2. با dig/nslookup chain DNS را بررسی کنید.
-3. با ss/ip route/socket state مسیر شبکه را تحلیل کنید.
-4. با policy firewall حداقلی سرویس را secure کنید.
+1. Reproduce a failed request with curl.
+2. Check the DNS chain with dig/nslookup.
+3. Analyze the network path with ss/ip route/socket state.
+4. Secure the service with a minimal firewall policy.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- استفاده از hostname در ruleهای firewall بدون تثبیت IP
-- باز گذاشتن SSH روی password auth
-- نداشتن rollback plan برای firewall changes
+- Using hostnames in firewall rules without fixing the IP
+- Leaving SSH open to password authentication
+- Not having a rollback plan for firewall changes
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 

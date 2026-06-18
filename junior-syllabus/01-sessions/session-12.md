@@ -3,36 +3,36 @@
 ## Topic
 Final Swarm Orchestration, Basic Monitoring, End-to-End Demo, Next Steps
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 
- 
-## خلاصه جلسه
 
-این جلسه پایان مسیر Junior است: یک deploy نهایی، بررسی health، تمرین rollback و مرور حداقلی observability. هدف این است که دانشجو بتواند یک مسیر end-to-end عملیاتی را توضیح و اجرا کند.
+## Session Summary
 
-## موضوعات فنی که باید پوشش داده شود
+This session marks the end of the Junior path: a final deployment, health check, rollback practice, and a minimal review of observability. The goal is for the student to be able to explain and execute an end-to-end operational path.
 
-- deploy نهایی با Swarm
-- rollback و recovery
-- health verification و smoke test
-- آشنایی اولیه با metrics/logs/signals
+## Technical Topics to be Covered
 
-## دستورات کلیدی
+- Final deployment with Swarm
+- Rollback and recovery
+- Health verification and smoke tests
+- Basic introduction to metrics/logs/signals
+
+## Key Commands
 
 - docker swarm init/join
 - docker node ls, docker service ls/ps/logs/update/rollback
 - docker stack deploy/rm
-- curl برای smoke test
+- curl for smoke tests
 
-## سناریوی عملی
+## Practical Scenario
 
-از commit تا deploy روی swarm اجرا می‌شود، اتصال app به DB بررسی می‌شود، health endpoint و log مرور می‌شود و در پایان runbook rollback تکمیل می‌گردد.
+The process from commit to deployment on Swarm is executed, the app's connection to the DB is checked, the health endpoint and logs are reviewed, and finally, the rollback runbook is completed.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
-- این جلسه LPIC مستقیم ندارد و به‌عنوان transition planning دیده می‌شود.
+- This session does not have a direct LPIC equivalent and is seen as transition planning.
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://docs.docker.com/engine/swarm/
 - Official: https://docs.docker.com/engine/swarm/services/
@@ -47,44 +47,44 @@ Final Swarm Orchestration, Basic Monitoring, End-to-End Demo, Next Steps
 
 - Assignment: team final demo + rollback runbook
 - Artifact: homework/session-12/final-demo.md + rollback-runbook.md + architecture-diagram.png
-- Rubric: 35% end-to-end correctness، 25% operability، 20% monitoring clarity، 20% presentation
+- Rubric: 35% end-to-end correctness, 25% operability, 20% monitoring clarity, 20% presentation
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- اضافه کردن SLI/SLO ساده برای یک endpoint کلیدی
-- معرفی minimum incident timeline template
+- Add a simple SLI/SLO for a key endpoint
+- Introduce a minimum incident timeline template
 - Out-of-scope (Junior): production-grade multi-cluster observability
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو بتواند demo نهایی را از commit تا deploy اجرا کند.
-- rollback عملیاتی و مسیر recovery را مستندسازی کند.
-- مفاهیم پایه observability را برای مرحله بعدی (K8s) درک کند.
+- The student can execute the final demo from commit to deployment.
+- Document the operational rollback and recovery path.
+- Understand the basic concepts of observability for the next stage (K8s).
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:25: recap معماری نهایی پروژه
-- 00:25 تا 01:00: deploy روی swarm و health verification
-- 01:00 تا 01:20: rollback strategy و تمرین
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:10: observability basics (metrics/logs/signals)
-- 02:10 تا 02:45: team demo
-- 02:45 تا 03:00: retrospective + next step roadmap
+- 00:00 to 00:25: Recap of the final project architecture
+- 00:25 to 01:00: Deployment on Swarm and health verification
+- 01:00 to 01:20: Rollback strategy and practice
+- 01:20 to 01:30: Break
+- 01:30 to 02:10: Observability basics (metrics/logs/signals)
+- 02:10 to 02:45: Team demo
+- 02:45 to 03:00: Retrospective + next step roadmap
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. deploy استاندارد با stack انجام شود.
-2. failure کنترل شده ایجاد و rollback تست شود.
-3. health endpoint و log review برای تایید سرویس انجام شود.
-4. مسیر migration بعدی به Kubernetes تعریف شود.
+1. Perform a standard deployment with a stack.
+2. Create a controlled failure and test the rollback.
+3. Review the health endpoint and logs to confirm service status.
+4. Define the next migration path to Kubernetes.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- نداشتن معیار پذیرش قبل از deploy
-- rollback بدون تست واقعی
-- observability فقط با log خام و بدون metric
+- Not having acceptance criteria before deployment
+- Rolling back without real testing
+- Observability with only raw logs and no metrics
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 

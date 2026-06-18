@@ -4,7 +4,7 @@
 - Sessions: 12
 - Scope: Junior only
 - Mid-level: deferred to future phase
-- Main language: Persian
+- Main language: English
 - Delivery format: Technical session docs per file
 - Alignment baselines:
   - Arvan Academy: Foundational Cloud Practitioner
@@ -13,4 +13,4 @@
 ## Scope Notes
 
 - This package intentionally excludes Mid-level topics.
-- LPIC references are marked as LPIC-like where direct objective pages are inaccessible behind cookie/privacy gates.
+- References like LPIC references are marked as LPIC-like where direct objective pages are inaccessible behind cookie/privacy gates.

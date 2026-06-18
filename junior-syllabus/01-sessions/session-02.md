@@ -3,21 +3,21 @@
 ## Topic
 Linux Storage, Filesystems, LVM, Inode, Users and Least Privilege
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 
-## خلاصه جلسه
+## Session Summary
 
-این جلسه روی storage lifecycle در Linux تمرکز دارد: از شناسایی block device تا ساخت filesystem، مدیریت LVM، بررسی inode و اعمال least privilege. هدف فقط آشنایی با فرمان‌ها نیست؛ دانشجو باید بفهمد در چه موقعیتی Ext4 بهتر است و چه زمانی XFS یا LVM به کار می‌آید.
+This session focuses on the storage lifecycle in Linux: from identifying block devices to creating filesystems, managing LVM, examining inodes, and applying the principle of least privilege. The goal is not just to become familiar with commands; the student must understand in which situations Ext4 is better and when XFS or LVM are applicable.
 
-## موضوعات فنی که باید پوشش داده شود
+## Technical Topics to be Covered
 
-- partitioning و تشخیص دیسک با lsblk و blkid
-- تفاوت Ext4 و XFS برای data volume
-- ساخت PV/VG/LV و resize کردن آن
-- inode behavior و نشانه‌های exhaustion
-- user, sudoers و ACL برای least privilege
+- Partitioning and disk identification with lsblk and blkid
+- Difference between Ext4 and XFS for data volumes
+- Creating and resizing PV/VG/LV
+- Inode behavior and signs of exhaustion
+- User, sudoers, and ACL for least privilege
 
-## دستورات کلیدی
+## Key Commands
 
 - lsblk, blkid, fdisk -l, parted -l
 - mkfs.ext4, mkfs.xfs, mount, umount, findmnt
@@ -25,17 +25,17 @@ Linux Storage, Filesystems, LVM, Inode, Users and Least Privilege
 - xfs_growfs, resize2fs, ls -i, stat
 - useradd, usermod, visudo, sudo -l, getfacl, setfacl
 
-## سناریوی عملی
+## Practical Scenario
 
-یک disk جدید به VM اضافه می‌شود، روی آن LVM ساخته می‌شود، filesystem مناسب انتخاب می‌شود، mount دائمی از طریق fstab اعمال می‌شود و در نهایت با ACL دسترسی یک گروه محدود می‌گردد. این سناریو باید همراه با توضیح علت انتخاب‌ها اجرا شود.
+A new disk is added to the VM, LVM is created on it, a suitable filesystem is chosen, it is permanently mounted via fstab, and finally, access for a specific group is restricted using ACLs. This scenario must be executed with an explanation for the choices made.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
 - 104.x: partitions, filesystems, mounting, permissions
 - 102.x: user administration
 - 107.x: security basics
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://man7.org/linux/man-pages/man8/lsblk.8.html
 - Official: https://man7.org/linux/man-pages/man8/lvm.8.html
@@ -49,44 +49,44 @@ Linux Storage, Filesystems, LVM, Inode, Users and Least Privilege
 
 - Assignment: storage provisioning runbook + least-privilege policy
 - Artifact: homework/session-02/storage-lab.md + commands.sh + sudoers-policy.md
-- Rubric: 35% storage correctness، 25% security، 25% troubleshooting، 15% documentation
+- Rubric: 35% storage correctness, 25% security, 25% troubleshooting, 15% documentation
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- افزودن سناریوی inode exhaustion با فایل کوچک زیاد
-- بررسی خطرات NOPASSWD و pattern امن برای sudoers.d
-- Out-of-scope (Junior): RAID tuning و advanced filesystem benchmark
+- Add a scenario for inode exhaustion with many small files
+- Review the risks of NOPASSWD and secure patterns for sudoers.d
+- Out-of-scope (Junior): RAID tuning and advanced filesystem benchmarking
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو بتواند lifecycle کامل PV -> VG -> LV را اجرا و troubleshoot کند.
-- برای workloadهای متفاوت انتخاب Ext4 یا XFS را توجیه کند.
-- سیاست least privilege را با sudoers و ACL پیاده کند.
+- The student can execute and troubleshoot the complete PV -> VG -> LV lifecycle.
+- Justify the choice of Ext4 or XFS for different workloads.
+- Implement a least privilege policy using sudoers and ACLs.
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:25: storage map و block device شناخت
-- 00:25 تا 01:05: partitioning و filesystem creation
-- 01:05 تا 01:20: inode behavior و failure modes
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:10: LVM عملی از صفر
-- 02:10 تا 02:40: sudoers + ACL policy lab
-- 02:40 تا 03:00: جمع بندی و ارزیابی سناریو محور
+- 00:00 to 00:25: Storage map and block device identification
+- 00:25 to 01:05: Partitioning and filesystem creation
+- 01:05 to 01:20: Inode behavior and failure modes
+- 01:20 to 01:30: Break
+- 01:30 to 02:10: Practical LVM from scratch
+- 02:10 to 02:40: Sudoers + ACL policy lab
+- 02:40 to 03:00: Summary and scenario-based evaluation
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. دیسک خام اضافه شود و با lsblk/blkid وضعیت اولیه ثبت شود.
-2. یک LV ساخته و mount دائمی از طریق fstab اعمال شود.
-3. با ایجاد فایل های کوچک زیاد، inode pressure شبیه سازی شود.
-4. دسترسی یک تیم فرضی با ACL و sudo policy محدود شود.
+1. Add a raw disk and record the initial state with lsblk/blkid.
+2. Create an LV and apply a permanent mount via fstab.
+3. Simulate inode pressure by creating many small files.
+4. Restrict access for a hypothetical team using ACLs and a sudo policy.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- ادیت مستقیم sudoers بدون visudo
-- mount شدن دستی بدون persist در fstab
-- عدم تست rollback بعد از تغییرات storage
+- Editing sudoers directly without visudo
+- Manual mounting without persisting in fstab
+- Not testing rollback after storage changes
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 

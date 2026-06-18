@@ -3,39 +3,39 @@
 ## Topic
 systemd, journald, Unit Override, Cron vs Timer vs at
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 - ../00-governance/course-metadata.md
 - ../00-governance/editorial-standard.md
 - ../00-governance/session-template.md
 
-## خلاصه جلسه
+## Session Summary
 
-این جلسه رفتار عملی systemd، journald و زمان‌بندی taskها را پوشش می‌دهد. دانشجو باید بتواند سرویس‌ها را مدیریت کند، لاگ‌ها را query کند و بین cron، timer و at بر اساس نیاز واقعی تصمیم بگیرد.
+This session covers the practical behavior of systemd, journald, and task scheduling. The student should be able to manage services, query logs, and decide between cron, timer, and at based on real-world needs.
 
-## موضوعات فنی که باید پوشش داده شود
+## Technical Topics to be Covered
 
-- lifecycle سرویس در systemd
-- query کردن log با journalctl
-- override کردن unit file
-- تفاوت cron، timer و at
+- Service lifecycle in systemd
+- Querying logs with journalctl
+- Overriding a unit file
+- The difference between cron, timer, and at
 
-## دستورات کلیدی
+## Key Commands
 
 - systemctl status/start/stop/restart/reload/enable/disable
 - systemctl edit, systemctl daemon-reload, systemctl list-timers
 - journalctl -u, journalctl -b, journalctl --since, journalctl -f
 - crontab -e/-l, at, atq, atrm
 
-## سناریوی عملی
+## Practical Scenario
 
-یک service سفارشی برای health-check ساخته می‌شود، با timer هر چند دقیقه اجرا می‌شود، خروجی آن در journal ثبت می‌گردد و سپس همان کار با cron هم پیاده‌سازی و مقایسه می‌شود.
+A custom health-check service is created, run every few minutes with a timer, its output is logged in the journal, and then the same task is implemented and compared with cron.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
 - 101.x: boot/service behavior
 - 107.x: scheduled jobs, log inspection
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://www.freedesktop.org/software/systemd/man/latest/systemd.service.html
 - Official: https://www.freedesktop.org/software/systemd/man/latest/systemd.timer.html
@@ -48,44 +48,44 @@ systemd, journald, Unit Override, Cron vs Timer vs at
 
 - Assignment: backup-check.service + backup-check.timer
 - Artifact: homework/session-03/backup-check.service + backup-check.timer + README
-- Rubric: 40% unit correctness، 30% log inspection، 20% cron-vs-timer reasoning، 10% clarity
+- Rubric: 40% unit correctness, 30% log inspection, 20% cron-vs-timer reasoning, 10% clarity
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- اضافه کردن journald retention policy و log rotation rationale
-- تمرین failure injection با ExecStart عمدی خطادار
-- Out-of-scope (Junior): custom target design در سطح multi-service orchestration
+- Add journald retention policy and log rotation rationale
+- Practice failure injection with an intentionally faulty ExecStart
+- Out-of-scope (Junior): custom target design at the multi-service orchestration level
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو تفاوت service unit و timer unit را عملی بفهمد.
-- بتواند لاگ های systemd را با query زمانی و واحد سرویس تحلیل کند.
-- بین cron و timer بر اساس نیاز عملیاتی انتخاب صحیح انجام دهد.
+- The student will practically understand the difference between a service unit and a timer unit.
+- Be able to analyze systemd logs with time and service unit queries.
+- Make the correct choice between cron and timer based on operational needs.
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:20: مروری بر init/systemd architecture
-- 00:20 تا 01:00: service unit deep dive
-- 01:00 تا 01:20: journald query patterns
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:15: طراحی timer و مقایسه با cron/at
-- 02:15 تا 02:45: lab عملی backup-check
-- 02:45 تا 03:00: postmortem سبک
+- 00:00 to 00:20: Overview of init/systemd architecture
+- 00:20 to 01:00: Service unit deep dive
+- 01:00 to 01:20: journald query patterns
+- 01:20 to 01:30: Break
+- 01:30 to 02:15: Designing a timer and comparing it with cron/at
+- 02:15 to 02:45: Practical backup-check lab
+- 02:45 to 03:00: Lightweight postmortem
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. یک unit ساده ایجاد شود.
-2. unit با خطای عمدی اجرا و log path تحلیل شود.
-3. همان task با cron و timer پیاده و مقایسه observability انجام شود.
-4. خروجی به runbook قابل استفاده در incident تبدیل شود.
+1. Create a simple unit.
+2. Run the unit with an intentional error and analyze the log path.
+3. Implement the same task with cron and a timer and compare observability.
+4. Convert the output into a usable runbook for incidents.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- فراموش کردن daemon-reload
-- استفاده از timer بدون بررسی timezone و persistent behavior
-- نبود health signal در لاگ خروجی task
+- Forgetting to run daemon-reload
+- Using a timer without checking timezone and persistent behavior
+- Lack of a health signal in the task's log output
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 

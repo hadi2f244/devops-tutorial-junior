@@ -3,38 +3,38 @@
 ## Topic
 Production-Ready Bash Scripting, Regex, awk/sed, Error Handling
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 - ../00-governance/course-metadata.md
 - ../00-governance/editorial-standard.md
 - ../00-governance/session-template.md
 
-## خلاصه جلسه
+## Session Summary
 
-این جلسه Bash را از سطح command line به سطح script عملیاتی می‌برد. تمرکز روی error handling، parsing، quoting و ساخت اسکریپتی است که در محیط production قابل اعتماد باشد.
+This session takes Bash from the command line level to the operational script level. The focus is on error handling, parsing, quoting, and creating a script that is reliable in a production environment.
 
-## موضوعات فنی که باید پوشش داده شود
+## Technical Topics to be Covered
 
-- strict mode و trap pattern
-- parsing با awk/sed/grep
-- quoting، globbing و جلوگیری از word splitting
-- طراحی exit code مناسب برای CI و عملیات
+- Strict mode and trap patterns
+- Parsing with awk/sed/grep
+- Quoting, globbing, and preventing word splitting
+- Designing appropriate exit codes for CI and operations
 
-## دستورات کلیدی
+## Key Commands
 
 - bash -n, shellcheck, set -euo pipefail, trap '...' ERR EXIT
 - grep -E, awk, sed -E, cut, tr, xargs, tee
 - sort, uniq, getopts, [[ ]], case, for/while
 
-## سناریوی عملی
+## Practical Scenario
 
-یک script برای اعتبارسنجی backup نوشته می‌شود که log را parse کند، خطاها را دسته‌بندی کند، exit code مناسب برگرداند و report تولید کند.
+A script is written to validate backups. It parses logs, categorizes errors, returns an appropriate exit code, and generates a report.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
 - 103.x: text processing tools
 - 105.x: shell scripting fundamentals
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://www.gnu.org/software/bash/manual/bash.html
 - Official: https://www.gnu.org/software/gawk/manual/gawk.html
@@ -45,46 +45,46 @@ Production-Ready Bash Scripting, Regex, awk/sed, Error Handling
 
 ## Assignment and Rubric
 
-- Assignment: script production-ready با test cases
+- Assignment: production-ready script with test cases
 - Artifact: homework/session-04/backup-validator.sh + test-cases.txt + sample-logs/
-- Rubric: 35% robustness، 25% readability، 25% parsing correctness، 15% tests
+- Rubric: 35% robustness, 25% readability, 25% parsing correctness, 15% tests
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- افزودن bats-core برای unit test اسکریپت shell
-- اضافه کردن قالب استاندارد logging (timestamp + severity)
-- Out-of-scope (Junior): توسعه library shell قابل reuse در مقیاس تیمی
+- Add bats-core for unit testing shell scripts
+- Add a standard logging format (timestamp + severity)
+- Out-of-scope (Junior): developing a reusable shell library at a team scale
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو script قابل اتکا با error handling واقعی بنویسد.
-- با quoting/globbing pitfalls آشنا شود و خطاهای رایج را پیشگیری کند.
-- برای parsing لاگ از awk/sed/grep در pipeline درست استفاده کند.
+- The student will write a reliable script with real error handling.
+- Become familiar with quoting/globbing pitfalls and prevent common errors.
+- Use awk/sed/grep correctly in a pipeline for log parsing.
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:25: اصول script production-ready
-- 00:25 تا 01:05: set -euo pipefail + trap patterns
-- 01:05 تا 01:20: regex and quoting pitfalls
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:15: parsing pipeline با awk/sed/grep
-- 02:15 تا 02:45: پیاده سازی backup-validator.sh
-- 02:45 تا 03:00: code review جمعی
+- 00:00 to 00:25: Principles of a production-ready script
+- 00:25 to 01:05: set -euo pipefail + trap patterns
+- 01:05 to 01:20: Regex and quoting pitfalls
+- 01:20 to 01:30: Break
+- 01:30 to 02:15: Parsing pipeline with awk/sed/grep
+- 02:15 to 02:45: Implementing backup-validator.sh
+- 02:45 to 03:00: Collective code review
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. نسخه شکننده script را نشان دهید.
-2. همان script با strict mode و trap refactor شود.
-3. چند sample log با edge case اضافه و parser robust شود.
-4. Exit code contract برای CI تعریف شود.
+1. Show a fragile version of the script.
+2. Refactor the same script with strict mode and traps.
+3. Add a few sample logs with edge cases and make the parser robust.
+4. Define an exit code contract for CI.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- word splitting ناخواسته به علت quote نکردن
-- اتکا به grep-only برای parsing ساختارمند
-- نادیده گرفتن shellcheck warningها
+- Unwanted word splitting due to not quoting
+- Relying on grep-only for structured parsing
+- Ignoring shellcheck warnings
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 

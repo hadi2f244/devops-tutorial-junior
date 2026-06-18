@@ -1,19 +1,19 @@
 # Junior Syllabus Index
 
-این فایل به نمایه تبدیل شد تا سند طولانی شکسته شود.
+This file has been converted into an index to break down the long document.
 
-ساختار جدید:
+New structure:
 
 - junior-syllabus/00-governance
 - junior-syllabus/01-sessions
 
-برای مشخصات دوره، استاندارد نگارشی و قالب‌ها:
+For course specifications, editorial standards, and templates:
 
 - junior-syllabus/00-governance/course-metadata.md
 - junior-syllabus/00-governance/editorial-standard.md
 - junior-syllabus/00-governance/session-template.md
 
-برای جلسات:
+For sessions:
 
 - junior-syllabus/01-sessions/session-01.md
 - junior-syllabus/01-sessions/session-02.md

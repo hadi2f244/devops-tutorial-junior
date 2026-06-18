@@ -3,37 +3,37 @@
 ## Topic
 Ansible Vault, Galaxy Dependencies, Multi-Environment Deployment
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 - ../00-governance/course-metadata.md
 - ../00-governance/editorial-standard.md
 - ../00-governance/session-template.md
 
-## خلاصه جلسه
+## Session Summary
 
-این جلسه روی امنیت اتوماسیون تمرکز دارد: Vault، dependency pinning، و deployment چند محیطی. دانشجو باید بفهمد secret باید جدا از کد نگهداری شود و تغییرات محیطی باید قابل کنترل باشند.
+This session focuses on automation security: Vault, dependency pinning, and multi-environment deployment. The student must understand that secrets should be kept separate from code and that environmental changes must be controllable.
 
-## موضوعات فنی که باید پوشش داده شود
+## Technical Topics to be Covered
 
-- ansible-vault و lifecycle secret
+- ansible-vault and the secret lifecycle
 - Galaxy dependency management
-- pinning نسخه‌ها برای کاهش drift
-- deployment جداگانه برای dev و stage
+- Pinning versions to reduce drift
+- Separate deployment for dev and stage
 
-## دستورات کلیدی
+## Key Commands
 
 - ansible-vault create/edit/view/encrypt/decrypt/rekey
 - ansible-galaxy init/install/list
 - ansible-playbook -i inventory, --tags, --limit, --check, --diff
 
-## سناریوی عملی
+## Practical Scenario
 
-یک سرویس در dev و stage با secret جدا deploy می‌شود و dependencyهای roleها با requirements.yml نسخه‌بندی و تثبیت می‌گردد.
+A service is deployed in dev and stage with separate secrets, and role dependencies are versioned and pinned with requirements.yml.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
-- این جلسه LPIC مستقیم ندارد و به‌عنوان extension عملی automation + security دیده می‌شود.
+- This session does not have a direct LPIC equivalent and is seen as a practical extension of automation + security.
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://docs.ansible.com/ansible/latest/vault_guide/index.html
 - Official: https://docs.ansible.com/ansible/latest/galaxy/user_guide.html
@@ -46,44 +46,44 @@ Ansible Vault, Galaxy Dependencies, Multi-Environment Deployment
 
 - Assignment: multi-env deployment with vault and pinned dependencies
 - Artifact: homework/session-08/site.yml + group_vars/ + vault/ + requirements.yml
-- Rubric: 35% secret hygiene، 30% env consistency، 20% automation quality، 15% docs
+- Rubric: 35% secret hygiene, 30% env consistency, 20% automation quality, 15% docs
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- اضافه کردن secret rotation checklist
-- مقایسه short-lived credential با static secret
+- Add a secret rotation checklist
+- Compare short-lived credentials with static secrets
 - Out-of-scope (Junior): enterprise secrets backends integration
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو secret را از code جدا و lifecycle آن را مدیریت کند.
-- dependency pinning را برای کاهش drift پیاده کند.
-- deployment چند محیطی را با کنترل تغییرات انجام دهد.
+- The student will separate secrets from code and manage their lifecycle.
+- Implement dependency pinning to reduce drift.
+- Perform multi-environment deployments with change control.
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:25: threat model ساده برای secrets
-- 00:25 تا 01:00: ansible-vault workflow کامل
-- 01:00 تا 01:20: galaxy dependency management
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:15: multi-env deployment design
-- 02:15 تا 02:45: drift detection mini-lab
-- 02:45 تا 03:00: policy review
+- 00:00 to 00:25: Simple threat model for secrets
+- 00:25 to 01:00: Complete ansible-vault workflow
+- 01:00 to 01:20: Galaxy dependency management
+- 01:20 to 01:30: Break
+- 01:30 to 02:15: Multi-env deployment design
+- 02:15 to 02:45: Drift detection mini-lab
+- 02:45 to 03:00: Policy review
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. secret plain-text را به vault migration کنید.
-2. requirements.yml را pin کرده و verify بگیرید.
-3. deploy dev و stage با inventory جدا اجرا کنید.
-4. یک drift عمدی ایجاد و بازیابی انجام دهید.
+1. Migrate a plain-text secret to a vault.
+2. Pin requirements.yml and verify.
+3. Run dev and stage deployments with separate inventories.
+4. Intentionally create a drift and perform recovery.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- commit شدن vault password یا secret فایل
-- dependency بدون version pin
-- نبود تفکیک متغیرهای محیطی
+- Committing vault passwords or secret files
+- Dependencies without version pins
+- Lack of separation for environment variables
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 

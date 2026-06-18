@@ -2,9 +2,9 @@
 
 ## Language Policy
 
-- Explanatory text is Persian.
+- Explanatory text is English.
 - Technical terms remain in standard English form.
-- Avoid unnecessary Persianized technical words.
+- Avoid unnecessary anglicized technical words.
 
 ## Required Session Sections
 

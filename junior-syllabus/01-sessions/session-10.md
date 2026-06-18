@@ -3,20 +3,20 @@
 ## Topic
 Docker Compose, Volumes/Networks, Swarm Intro
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 
-## خلاصه جلسه
+## Session Summary
 
-این جلسه به Docker Compose و Swarm می‌پردازد. دانشجو یاد می‌گیرد چگونه یک stack چندسرویسه را برای local dev و E2E مدیریت کند و سپس همان الگو را در Swarm به‌صورت ساده deploy کند.
+This session covers Docker Compose and Swarm. The student will learn how to manage a multi-service stack for local development and E2E testing, and then deploy the same pattern simply in Swarm.
 
-## موضوعات فنی که باید پوشش داده شود
+## Technical Topics to be Covered
 
-- تعریف multi-container application با Compose
-- network و volume در Compose
-- healthcheck و restart policy
-- معرفی Swarm و service model
+- Defining a multi-container application with Compose
+- Networks and volumes in Compose
+- Health checks and restart policies
+- Introduction to Swarm and the service model
 
-## دستورات کلیدی
+## Key Commands
 
 - docker compose up/down/ps/logs/exec/build
 - docker network ls/create/inspect
@@ -25,15 +25,15 @@ Docker Compose, Volumes/Networks, Swarm Intro
 - docker service create/ls/scale/update
 - docker stack deploy
 
-## سناریوی عملی
+## Practical Scenario
 
-یک stack شامل app + db + redis با Compose بالا می‌آید، smoke test اجرا می‌شود و سپس نسخه ساده همان workload روی Swarm deploy می‌شود تا تفاوت orchestration دیده شود.
+A stack including an app, a database, and Redis is brought up with Compose, a smoke test is run, and then a simple version of the same workload is deployed on Swarm to see the difference in orchestration.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
-- این جلسه LPIC مستقیم ندارد و در سطح orchestration intro قرار می‌گیرد.
+- This session does not have a direct LPIC equivalent and is at the orchestration intro level.
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://docs.docker.com/compose/
 - Official: https://docs.docker.com/engine/network/
@@ -46,44 +46,44 @@ Docker Compose, Volumes/Networks, Swarm Intro
 
 - Assignment: compose stack with healthcheck + simple swarm stack
 - Artifact: homework/session-10/compose.yaml + stack.yaml + e2e-checklist.md
-- Rubric: 35% service wiring، 25% persistence، 25% orchestration understanding، 15% clarity
+- Rubric: 35% service wiring, 25% persistence, 25% orchestration understanding, 15% clarity
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- اضافه کردن restart policy و healthcheck tuning
-- تمرین fault injection با قطع یکی از سرویس ها
-- Out-of-scope (Junior): multi-node overlay network troubleshooting عمیق
+- Add restart policy and healthcheck tuning
+- Practice fault injection by stopping one of the services
+- Out-of-scope (Junior): deep multi-node overlay network troubleshooting
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو بتواند یک محیط چندسرویسه local را با Compose پایدار اجرا کند.
-- شبکه و volume را برای محیط توسعه/تست درست طراحی کند.
-- تفاوت runtime بین Compose و Swarm را در عمل ببیند.
+- The student can run a stable multi-service local environment with Compose.
+- Design networks and volumes correctly for dev/test environments.
+- See the runtime difference between Compose and Swarm in practice.
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:20: compose model و فایل compose.yaml
-- 00:20 تا 01:00: services, networks, volumes عمیق
-- 01:00 تا 01:20: healthcheck و startup order
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:10: E2E local lab
-- 02:10 تا 02:40: swarm intro و service deploy
-- 02:40 تا 03:00: مقایسه و جمع بندی
+- 00:00 to 00:20: Compose model and the compose.yaml file
+- 00:20 to 01:00: Deep dive into services, networks, volumes
+- 01:00 to 01:20: Health checks and startup order
+- 01:20 to 01:30: Break
+- 01:30 to 02:10: E2E local lab
+- 02:10 to 02:40: Swarm intro and service deployment
+- 02:40 to 03:00: Comparison and summary
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. stack محلی app+db+cache با Compose بالا بیاید.
-2. healthcheck و restart policy تنظیم شود.
-3. smoke test اجرا و failure شبیه سازی شود.
-4. نسخه ساده همان stack روی swarm deploy شود.
+1. Bring up a local app+db+cache stack with Compose.
+2. Configure health checks and restart policies.
+3. Run a smoke test and simulate a failure.
+4. Deploy a simple version of the same stack on Swarm.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- استفاده از depends_on به عنوان تضمین readiness
-- نداشتن volume برای stateful service
-- expose کردن همه پورت ها بدون نیاز
+- Using depends_on as a guarantee of readiness
+- Not having a volume for a stateful service
+- Exposing all ports unnecessarily
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 

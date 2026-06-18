@@ -3,23 +3,23 @@
 ## Topic
 Linux Fundamentals: Boot Process, systemd Targets, Resource Baseline
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 - ../00-governance/course-metadata.md
 - ../00-governance/editorial-standard.md
 - ../00-governance/session-template.md
 
-## خلاصه جلسه
+## Session Summary
 
-این جلسه پایه ورود به Linux در مسیر DevOps است. دانشجو با boot flow از BIOS/UEFI تا PID1 آشنا می‌شود، فرق runlevel و systemd target را می‌فهمد، و یاد می‌گیرد چگونه با command line یک baseline عملیاتی از سیستم بگیرد. تمرکز جلسه روی تحلیل وضعیت سیستم از نگاه یک operator است، نه صرفا حفظ چند command.
+This session is the foundation for entering the Linux world in the DevOps path. The student will become familiar with the boot flow from BIOS/UEFI to PID1, understand the difference between runlevels and systemd targets, and learn how to get an operational baseline of the system using the command line. The focus of the session is on analyzing the system's status from an operator's perspective, not just memorizing a few commands.
 
-## موضوعات فنی که باید پوشش داده شود
+## Technical Topics to be Covered
 
-- مسیر بوت Linux و نقش bootloader و systemd
-- targetهای رایج مثل multi-user.target و graphical.target
-- تحلیل اولیه CPU، RAM، load و processها
-- commandهای پایه برای inspection و troubleshooting
+- Linux boot path and the role of the bootloader and systemd
+- Common targets like multi-user.target and graphical.target
+- Initial analysis of CPU, RAM, load, and processes
+- Basic commands for inspection and troubleshooting
 
-## دستورات کلیدی
+## Key Commands
 
 - uname, hostnamectl, uptime
 - systemctl get-default, systemctl list-units --type=target, systemctl isolate
@@ -28,17 +28,17 @@ Linux Fundamentals: Boot Process, systemd Targets, Resource Baseline
 - ps aux --sort=-%cpu, ps aux --sort=-%mem
 - ls, find, grep, less, tail
 
-## سناریوی عملی
+## Practical Scenario
 
-دانشجو باید یک baseline report بسازد که شامل kernel version، load average، وضعیت حافظه، top processها و یک تفسیر کوتاه از bottleneck باشد. این خروجی باید به شکل artifact قابل تحویل در Git ذخیره شود.
+The student must create a baseline report that includes the kernel version, load average, memory status, top processes, and a brief interpretation of any bottlenecks. This output should be saved as a deliverable artifact in Git.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
 - 101.x: system architecture + boot process
 - 103.x: GNU/Linux commands
 - 108.x: process basics
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://www.freedesktop.org/software/systemd/man/latest/systemctl.html
 - Official: https://www.freedesktop.org/software/systemd/man/latest/journalctl.html
@@ -50,46 +50,46 @@ Linux Fundamentals: Boot Process, systemd Targets, Resource Baseline
 
 ## Assignment and Rubric
 
-- Assignment: اسکریپت system-report.sh برای snapshot سیستم
+- Assignment: system-report.sh script for a system snapshot
 - Artifact: homework/session-01/system-report.sh + README + sample-output.txt
-- Rubric: 30% مفهومی، 30% تحلیل خروجی، 25% lab، 15% تکلیف
+- Rubric: 30% conceptual, 30% output analysis, 25% lab, 15% assignment
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- اضافه کردن sar/iostat برای baseline روندی
-- معرفی quick triage checklist برای incident دقیقه اول
-- Out-of-scope (Junior): tuning عمیق kernel scheduler
+- Add sar/iostat for trend-based baselining
+- Introduce a quick triage checklist for first-minute incidents
+- Out-of-scope (Junior): deep kernel scheduler tuning
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو بتواند زنجیره بوت را از firmware تا رسیدن به user space توضیح دهد.
-- فرق system state و service state را در systemd تحلیل کند.
-- خروجی ابزارهای resource monitoring را به تصمیم عملیاتی تبدیل کند.
+- The student can explain the boot chain from firmware to user space.
+- Analyze the difference between system state and service state in systemd.
+- Convert the output of resource monitoring tools into operational decisions.
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:20: مرور مسیر دوره و تعریف operational baseline
-- 00:20 تا 00:55: بوت لینوکس و نقش systemd در startup
-- 00:55 تا 01:20: targetها، dependencyها، و حالت rescue
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:10: CPU/RAM/Load تحلیل عملی
-- 02:10 تا 02:40: command drill روی file/process inspection
-- 02:40 تا 03:00: lab و پرسش/پاسخ
+- 00:00 to 00:20: Course overview and defining an operational baseline
+- 00:20 to 00:55: Linux boot process and the role of systemd in startup
+- 00:55 to 01:20: Targets, dependencies, and rescue mode
+- 01:20 to 01:30: Break
+- 01:30 to 02:10: Practical analysis of CPU/RAM/Load
+- 02:10 to 02:40: Command drill on file/process inspection
+- 02:40 to 03:00: Lab and Q&A
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. یک VM سالم را baseline بگیرید.
-2. یک سرویس را عمدا fail کنید و از journalctl مسیر تشخیص را نشان دهید.
-3. خروجی top/free/ps را کنار هم مقایسه کنید تا correlation دیده شود.
-4. خروجی نهایی را در قالب report تحویل بگیرید.
+1.  Take a baseline of a healthy VM.
+2.  Intentionally fail a service and show the diagnosis path using journalctl.
+3.  Compare the output of top/free/ps side-by-side to show correlation.
+4.  Receive the final output in the form of a report.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- یکی گرفتن load average با CPU درصدی
-- reliance بیش از حد به یک ابزار مانیتورینگ
-- نبود timestamp در گزارش های عملیاتی
+- Confusing load average with CPU percentage
+- Over-reliance on a single monitoring tool
+- Lack of timestamps in operational reports
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 

@@ -3,23 +3,23 @@
 ## Topic
 Sample Project Pipeline: Build/Test with Git + Bash + Docker
 
-مرجع مشخصات دوره، استاندارد نگارشی و قالب:
+Course specification, editorial standard, and format reference:
 - ../00-governance/course-metadata.md
 - ../00-governance/editorial-standard.md
 - ../00-governance/session-template.md
 
-## خلاصه جلسه
+## Session Summary
 
-این جلسه نمونه پروژه نهایی را وارد مرحله CI می‌کند. دانشجو باید pipeline‌ای بسازد که build و test را تفکیک کند، unit و integration test را در جریان اجرا قرار دهد و خروجی قابل گزارش داشته باشد.
+This session takes the sample final project into the CI stage. The student must build a pipeline that separates build and test, runs unit and integration tests in the flow, and has reportable output.
 
-## موضوعات فنی که باید پوشش داده شود
+## Technical Topics to be Covered
 
-- طراحی stageهای build و test
-- unit test و integration test
-- fail-fast behavior
-- reproducible pipeline
+- Designing build and test stages
+- Unit tests and integration tests
+- Fail-fast behavior
+- Reproducible pipeline
 
-## دستورات کلیدی
+## Key Commands
 
 - git rebase, bash strict mode
 - docker build/run
@@ -27,15 +27,15 @@ Sample Project Pipeline: Build/Test with Git + Bash + Docker
 - make test, pytest -q
 - coverage tooling
 
-## سناریوی عملی
+## Practical Scenario
 
-برای یک data service، pipeline محلی طراحی می‌شود که build و test را جدا کند و failure stageها را واضح گزارش دهد.
+For a data service, a local pipeline is designed that separates build and test and clearly reports failure stages.
 
-## نگاشت LPIC-like
+## LPIC-like Mapping
 
-- این جلسه فقط از نظر shell discipline با LPIC-like هم‌پوشانی دارد.
+- This session only overlaps with LPIC-like in terms of shell discipline.
 
-## رفرنس‌های این جلسه
+## References for this Session
 
 - Official: https://docs.github.com/en/actions
 - Official: https://docs.github.com/actions/get-started/quickstart
@@ -46,46 +46,46 @@ Sample Project Pipeline: Build/Test with Git + Bash + Docker
 
 ## Assignment and Rubric
 
-- Assignment: local + CI pipeline with minimum 2 stages
+- Assignment: local + CI pipeline with a minimum of 2 stages
 - Artifact: homework/session-11/ci-pipeline.yml + compose.test.yaml + test-report.md
-- Rubric: 40% pipeline correctness، 25% test quality، 20% reproducibility، 15% reporting
+- Rubric: 40% pipeline correctness, 25% test quality, 20% reproducibility, 15% reporting
 
-## محتوای تکمیلی پیشنهادی
+## Suggested Supplementary Content
 
-- افزودن caching strategy برای dependency install
-- اضافه کردن basic pipeline badge و quality gate
-- Out-of-scope (Junior): matrix builds و progressive delivery
+- Add a caching strategy for dependency installation
+- Add a basic pipeline badge and quality gate
+- Out-of-scope (Junior): matrix builds and progressive delivery
 
-## اهداف یادگیری تفصیلی
+## Detailed Learning Objectives
 
-- دانشجو pipeline حداقلی build/test را end-to-end پیاده کند.
-- فرق unit و integration test را در جریان CI عملیاتی کند.
-- fail-fast و reproducible build را در pipeline enforce کند.
+- The student will implement a minimal end-to-end build/test pipeline.
+- Operationalize the difference between unit and integration tests in a CI flow.
+- Enforce fail-fast and reproducible builds in the pipeline.
 
-## Agenda تفصیلی (180 دقیقه)
+## Detailed Agenda (180 minutes)
 
-- 00:00 تا 00:20: anatomy یک CI pipeline
-- 00:20 تا 01:00: build stage design
-- 01:00 تا 01:20: test strategy (unit/integration)
-- 01:20 تا 01:30: استراحت
-- 01:30 تا 02:10: local CI با compose.test
-- 02:10 تا 02:40: workflow روی GitHub Actions یا GitLab CI
-- 02:40 تا 03:00: failure analysis
+- 00:00 to 00:20: Anatomy of a CI pipeline
+- 00:20 to 01:00: Build stage design
+- 01:00 to 01:20: Test strategy (unit/integration)
+- 01:20 to 01:30: Break
+- 01:30 to 02:10: Local CI with compose.test
+- 02:10 to 02:40: Workflow on GitHub Actions or GitLab CI
+- 02:40 to 03:00: Failure analysis
 
-## مسیر تدریس مرحله ای
+## Step-by-step Teaching Path
 
-1. build command deterministic تعریف شود.
-2. test stage با خروجی واضح پاس/فیل اجرا شود.
-3. یک failure عمدی تزریق و مسیر debug تمرین شود.
-4. report نهایی با coverage summary تحویل شود.
+1. Define a deterministic build command.
+2. Run the test stage with clear pass/fail output.
+3. Inject an intentional failure and practice the debug path.
+4. Deliver the final report with a coverage summary.
 
-## خطاهای رایج که باید حتما پوشش داده شود
+## Common Errors to Cover
 
-- وابستگی به محیط local بدون pin version
-- اجرای integration test بدون isolated service
-- pipeline کند به علت cache نادرست
+- Dependency on the local environment without version pinning
+- Running integration tests without an isolated service
+- Slow pipeline due to incorrect caching
 
-## رفرنس های تکمیلی وب (Expanded)
+## Expanded Web References
 
 ### Official
 
