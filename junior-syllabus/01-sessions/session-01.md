@@ -6,7 +6,7 @@ Linux Fundamentals: Boot Process, systemd Targets, Resource Baseline
 Course specification, editorial standard, and format reference:
 - ../00-governance/course-metadata.md
 - ../00-governance/editorial-standard.md
-- ../00-governance/session-template.md
+- ../00-governance/related-certificates.md
 
 ## Session Summary
 
@@ -14,10 +14,14 @@ This session is the foundation for entering the Linux world in the DevOps path. 
 
 ## Technical Topics to be Covered
 
-- Linux boot path and the role of the bootloader and systemd
-- Common targets like multi-user.target and graphical.target
-- Initial analysis of CPU, RAM, load, and processes
+- Linux Structure and Boot Process
+- The role of the bootloader and systemd
+- Process and Thread concepts
+- Memory and CPU concepts
 - Basic commands for inspection and troubleshooting
+- Resource usage analysis (CPU, RAM, load)
+- Permission and Ownership concepts
+- Common systemd targets like multi-user.target and graphical.target
 
 ## Key Commands
 
